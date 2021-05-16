@@ -1,0 +1,34 @@
+.konten{
+    padding-top: 50px;
+
+    & h2 {
+        text-align: center;
+        padding-bottom: 50px;
+        color:#6a302c;
+    }
+
+    & p {
+        text-align: center;
+        color:#6a302c;
+    }
+
+    & .kiri {
+        margin-bottom: 20em;
+
+        & img {
+            width: 300px;
+            float: left;
+            padding-left: 250px;
+        }
+    }
+
+    & .kanan{
+        margin-bottom: 20em;
+
+        & img {
+            width: 300px;
+            float: right;
+            padding-right: 250px;
+        }
+    }
+}

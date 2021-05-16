@@ -1,2 +1,7 @@
-// Import pages
+// Import base
+@import "base/_variables";
+@import "base/_content";
+@import "base/_banner";
+
+// Import bar
 @import "bar/_nav";
