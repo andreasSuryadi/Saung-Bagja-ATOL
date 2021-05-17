@@ -22,7 +22,7 @@ nav {
         top: 0;
         position: fixed;
         z-index: 100;
-        background-color: $base;
+        background-color: $primary;
         margin: 0;
         list-style-type: none;
         line-height: 50px;
@@ -33,13 +33,13 @@ nav {
     & li a {
         display: block;
         padding: 0px 25px;
-        background-color: $base;
+        background-color: $primary;
         color: $white;
         text-decoration: none;
 
         &:hover {
             color: $text-hover;
-            background-color: $base-hover;
+            background-color: $primary-hover;
         }
 
         &.on {
