@@ -1,5 +1,5 @@
 .header {
-    height: 100vh;
+    height: 85vh;
     margin-top: 50px;
     background-image: linear-gradient(
         to right bottom,
@@ -27,10 +27,20 @@
         url(/../images/content/food-banner.jpg);
     }
 
-    // @include respond(phone) {
-    //     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    //     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    // }
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
     
     &__text-box {
         position: absolute;
