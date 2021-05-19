@@ -6,6 +6,8 @@
         @include('pages.base._navbar')
         
         @yield('content')
+
+        @include('pages.base._footer')
     </div>
 </body>
 </html>
