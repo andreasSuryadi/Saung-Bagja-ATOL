@@ -1,13 +1,21 @@
 @extends('pages.base.public')
 
 @section('content')
-    <article>
-        <div class="banner">
-            <h2>INI ADALAH BANNER, IYA KALI MASA BUKAN BANNER</h2>
-            <img src="{{ asset('images/content/banner.jpg') }}">
+    <!-- For Header Content -->
+    <header class="header">
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">Tentang Kami</span>
+                <span class="heading-primary--sub">Menyediakan makanan enak dari seluruh Indonesia</span>
+            </h1>
         </div>
+    </header>
+    <article>
         <div class="konten">
-            <h2>TENTANG SAUNG BAGJA</h2>
+            <div class="u-center-text u-margin-bottom-medium">
+                <h2 class="heading-secondary">
+                    Tentang Saung Bagja
+            </div>
             <div class="kiri">
                 <img src="{{ asset('images/content/banner.jpg') }}">
                 <p>INI ADALAH KONTEN, IYA KALI MASA BUKAN KONTEN</p>

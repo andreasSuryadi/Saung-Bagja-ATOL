@@ -1,6 +1,6 @@
 .header {
     height: 85vh;
-    margin-top: 50px;
+    margin-top: 60px;
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
@@ -44,7 +44,7 @@
     
     &__text-box {
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
