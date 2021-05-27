@@ -30,5 +30,41 @@ return [
         ],
     ],
 
+    'home' => [
+        'title' => 'Home',
+
+        'actions' => [
+            'index' => 'Homepage Content',
+            'sub-menu' => 'Sub Menu',
+        ],
+
+        'columns' => [
+            'title' => 'Title',
+            'subtitle' => 'Subtitle',
+            'icon' => 'Icon',
+            'button' => 'Button',
+        ],
+    ],
+
+    'news' => [
+        'title' => 'News',
+
+        'actions' => [
+            'index' => 'News',
+            'create' => 'New News',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'News will be published at',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'type' => 'Type',
+            'description' => 'Description',
+            'published_at' => 'Published at',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

@@ -15,6 +15,7 @@
             <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
                     Tentang Saung Bagja
+                </h2>
             </div>
             <div class="kiri">
                 <img src="{{ asset('images/content/banner.jpg') }}">

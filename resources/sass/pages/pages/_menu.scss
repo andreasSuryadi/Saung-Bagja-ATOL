@@ -1,0 +1,38 @@
+.food {
+    display: grid;
+	grid-template-columns: repeat(12,1fr);
+	margin: 0px 50px 20px 50px; /* T R B L */
+	gap:50px;
+	position: relative;
+
+    &-card {
+        width: 100%;
+        height: auto;
+        grid-column: span 4; 
+        // border-radius: 25px;
+        position: relative;
+        box-shadow: 0 10px 10px rgba(0,0,0,.1);
+
+        &-head img {
+            width: 383px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        &-body {
+            padding: 10px 15px;
+            width: 300px;
+
+            & h1 {
+                margin: 0;
+            }
+
+            & svg {
+                width: 30px;
+                position: absolute;
+                bottom: 7px;
+                right: 20px;
+            }
+        }
+    }
+}

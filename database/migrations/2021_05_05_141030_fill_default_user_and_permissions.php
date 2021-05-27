@@ -1,6 +1,6 @@
 <?php
 
-use Brackets\AdminAuth\Models\AdminUser;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Config\Repository;
 use Illuminate\Database\Migrations\Migration;
@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * Class FillDefaultAdminUserAndPermissions
+ * Class FillDefaultUserAndPermissions
  */
-class FillDefaultAdminUserAndPermissions extends Migration
+class FillDefaultUserAndPermissions extends Migration
 {
     /**
      * @var Repository|mixed
@@ -44,7 +44,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
     protected $password = 'admin1234';
 
     /**
-     * FillDefaultAdminUserAndPermissions constructor.
+     * FillDefaultUserAndPermissions constructor.
      */
     public function __construct()
     {
@@ -193,7 +193,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
                 if ($userItem === null) {
                     $userId = DB::table($this->userTable)->insertGetId($user);
 
-                    AdminUser::find($userId)->addMedia(storage_path() . '/images/avatar.png')
+                    User::find($userId)->addMedia(storage_path() . '/images/avatar.png')
                         ->preservingOriginal()
                         ->toMediaCollection('avatar', 'media');
 
@@ -251,7 +251,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
             foreach ($this->users as $user) {
                 $userItem = DB::table($this->userTable)->where('email', $user['email'])->first();
                 if ($userItem !== null) {
-                    AdminUser::find($userItem->id)->media()->delete();
+                    User::find($userItem->id)->media()->delete();
                     DB::table($this->userTable)->where('id', $userItem->id)->delete();
                     DB::table('model_has_permissions')->where([
                         'model_id' => $userItem->id,

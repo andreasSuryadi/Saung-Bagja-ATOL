@@ -19,9 +19,11 @@ class CreatePageSectionsTable extends Migration
             $table->foreignId('page_id')->constrained('pages');
 
             $table->string('section');
-            $table->string('title')->nullable(x);
+            $table->string('title')->nullable();
+            $table->string('subtitle')->nullable();
             $table->longText('description')->nullable();
-            $table->string('url_image')->nullable();
+            $table->string('button')->nullable();
+            $table->json('details');
 
             $table->timestamps();
         });

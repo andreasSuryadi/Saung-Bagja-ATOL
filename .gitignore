@@ -3,8 +3,10 @@
 /public/storage
 /public/css
 /public/fonts
+/public/media
 /public/js
 /storage/*.key
+/storage/uploads
 /vendor
 .env
 .env.backup
