@@ -38,10 +38,10 @@ class MenusController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'type'],
+            ['id', 'title'],
 
             // set columns to searchIn
-            ['id', 'title', 'type', 'description']
+            ['id', 'title', 'description']
         );
 
         if ($request->ajax()) {
@@ -66,7 +66,11 @@ class MenusController extends Controller
     {
         $this->authorize('admin.menu.create');
 
-        return view('admin.menu.create');
+        $menu = new Menu();
+
+        return view('admin.menu.create', [
+            'menu' => $menu
+        ]);
     }
 
     /**
@@ -114,7 +118,6 @@ class MenusController extends Controller
     public function edit(Menu $menu)
     {
         $this->authorize('admin.menu.edit', $menu);
-
 
         return view('admin.menu.edit', [
             'menu' => $menu,

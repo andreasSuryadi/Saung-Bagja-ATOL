@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\ConnectionController@home');
 Route::get('about-us', 'App\Http\Controllers\ConnectionController@aboutUs');
 Route::get('news', 'App\Http\Controllers\ConnectionController@news');
-Route::get('menu', function () {
-    return view('pages.menu.menu');
-});
+Route::get('menu', 'App\Http\Controllers\ConnectionController@menu');
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -36,6 +34,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         Route::get('/',                                             'PageController@home')->name('home');
         Route::get('/about-us',                                     'PageController@aboutUs')->name('aboutUs');
         Route::get('/news-content',                                 'PageController@news')->name('news');
+        Route::get('/menu-content',                                 'PageController@menu')->name('menu');
         Route::get('{slug}/{section}/show',                         'PageController@indexSection')->name('indexSection');
         Route::post('{slug}/{section}/save',                        'PageController@save')->name('save');
     });

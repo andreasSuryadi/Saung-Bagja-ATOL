@@ -6,3 +6,4 @@ import './news';
 import './menu';
 import './about-us';
 import './news-content';
+import './menu-content';

@@ -1,15 +1,14 @@
 import AppForm from '../app-components/Form/AppForm';
 
-Vue.component('menu-form', {
+Vue.component('banner-menu-form', {
     mixins: [AppForm],
     data: function() {
         return {
             form: {
                 title:  '' ,
-                description:  '' ,
+                subtitle:  '' ,
             },
             mediaCollections: ['banner'],
         }
-    }
-
+    },
 });

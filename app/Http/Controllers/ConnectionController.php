@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Page;
 use App\Models\PageSection;
@@ -143,6 +144,23 @@ class ConnectionController extends Controller
         return view('pages.menu.news', [
             'banner' => $banner_pages,
             'news_data' => $news_data
+        ]);
+    }
+
+    public function menu()
+    {
+        $banner = $this->getDetail('news', 'banner', 'banner');
+        $banner_pages = [
+            'title' => $banner->title ?? "Tentang Kami",
+            'subtitle' => $banner->subtitle ?? "Sekilas Tentang Kami",
+            'banner' => $banner && $banner->media ? $banner->media[0]->getUrl() : null,
+        ];
+
+        $menu_data = Menu::orderBy('created_at', 'desc')->get();
+
+        return view('pages.menu.menu', [
+            'banner' => $banner_pages,
+            'menu_data' => $menu_data
         ]);
     }
 }

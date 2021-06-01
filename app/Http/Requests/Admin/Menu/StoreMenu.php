@@ -27,7 +27,6 @@ class StoreMenu extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'type' => ['required', 'string'],
             'description' => ['required', 'string'],
             
         ];

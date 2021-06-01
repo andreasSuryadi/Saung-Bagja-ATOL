@@ -25,6 +25,11 @@ class PageController extends Controller
         return view('admin.news-content.index');
     }
 
+    public function menu()
+    {
+        return view('admin.menu-content.index');
+    }
+
     public function indexSection($slug, $section)
     {
         $page = Page::where('title', $slug)->first();
@@ -73,6 +78,12 @@ class PageController extends Controller
                     'pageSection' => $pageSection
                 ]);
             }
+        } else if ($slug == 'menu') {
+            if ($section == 'banner') {
+                return view('admin.menu-content.banner', [
+                    'pageSection' => $pageSection
+                ]);
+            }
         }
     }
 
@@ -90,8 +101,6 @@ class PageController extends Controller
 
         $sanitized['page_id'] = $page->id;
 
-        // return response()->json($request->all());
-
         $pageSection = PageSection::where('page_id', $page->id)->where('section', $section)->first();
         if (!$pageSection) {
             PageSection::create($sanitized);
@@ -100,6 +109,5 @@ class PageController extends Controller
         }
 
         return redirect('admin');
-        // return response()->json("Successfuly save data", 200);
     }
 }

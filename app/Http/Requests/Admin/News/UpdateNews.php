@@ -28,12 +28,10 @@ class UpdateNews extends FormRequest
     {
         return [
             'title' => ['sometimes', 'string'],
-            'type' => ['sometimes', 'string'],
             'description' => ['sometimes', 'string'],
             'published_at' => ['sometimes', 'date'],
             'publish_now' => ['nullable', 'boolean'],
             'unpublish_now' => ['nullable', 'boolean'],
-
         ];
     }
 

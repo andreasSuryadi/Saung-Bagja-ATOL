@@ -2,63 +2,36 @@
 
 @section('content')
     <!-- For Header Content -->
-    <header class="header">
+    <header class="header" style="background-image: linear-gradient(to right bottom, rgba(180, 76, 69, 0.8), rgba(83, 28, 24, 0.8)), url(<?= (isset($banner['banner'])) ? $banner['banner'] : asset('images/content/food-banner.jpg') ?>);">
         <div class="header__text-box">
             <h1 class="heading-primary">
-                <span class="heading-primary--main">Menu</span>
-                <span class="heading-primary--sub">Hidangan-hidangan yang ada di Saung Bagja</span>
+                <span class="heading-primary--main">{{ $banner['title'] }}</span>
+                <span class="heading-primary--sub">{{ $banner['subtitle'] }}</span>
             </h1>
         </div>
     </header>
     <article>
-        <div class="konten">
-            <div class="u-center-text u-margin-bottom-medium">
-                <h2 class="heading-secondary">
-                    Menu Makanan
-                </h2>
-            </div>
-        </div>
-        <div class="food">
-            <div class="food-card">
-                <div class="food-card-head">
-                    <img src="{{ asset('images/content/food-menu.jpg') }}">
+        <div class="food" style="padding-top: 5rem">
+            @foreach($menu_data as $menu)
+                @php
+                    $menu->getMedia('banner');
+                    $banner = $menu && $menu->media ? $menu->media[0]->getUrl() : null;
+                @endphp
+                <div class="food-card">
+                    <div class="food-card-head">
+                        <img src="{{ $banner ?? asset('images/content/food-menu.jpg') }}">
+                    </div>
+                    <div class="food-card-body">
+                        <h1>{{ $menu->title }}</h1>
+                        @if(strlen($menu->description) > 140)
+                            {!! substr($menu->description, 0 , 140) !!}...
+                        @else
+                            {!! $menu->description !!}
+                        @endif
+                        <svg class="w-6 h-6" fill="none" stroke="#303030" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
                 </div>
-                <div class="food-card-body">
-                    <h1>NASI TIMBEL</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae fuga facilis dicta fugiat voluptates deleniti libero earum sed aliquid.	</p>
-                    <svg class="w-6 h-6" fill="none" stroke="#303030" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
-            </div>
-            <div class="food-card">
-                <div class="food-card-head">
-                    <img src="{{ asset('images/content/food-menu.jpg') }}">
-                </div>
-                <div class="food-card-body">
-                    <h1>NASI LIWET</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae fuga facilis dicta fugiat voluptates deleniti libero earum sed aliquid.	</p>
-                    <svg class="w-6 h-6" fill="none" stroke="#303030" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
-            </div>
-            <div class="food-card">
-                <div class="food-card-head">
-                    <img src="{{ asset('images/content/food-menu.jpg') }}">
-                </div>
-                <div class="food-card-body">
-                    <h1>KAREDOK</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae fuga facilis dicta fugiat voluptates deleniti libero earum sed aliquid.	</p>
-                    <svg class="w-6 h-6" fill="none" stroke="#303030" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
-            </div>
-            <div class="food-card">
-                <div class="food-card-head">
-                    <img src="{{ asset('images/content/food-menu.jpg') }}">
-                </div>
-                <div class="food-card-body">
-                    <h1>KAREDOK</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae fuga facilis dicta fugiat voluptates deleniti libero earum sed aliquid.	</p>
-                    <svg class="w-6 h-6" fill="none" stroke="#303030" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
-            </div>
+            @endforeach
         </div>
     </article>
 @stop

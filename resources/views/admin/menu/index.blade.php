@@ -49,9 +49,8 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.menu.columns.id') }}</th>
+                                        <th :column="'id'">{{ trans('admin.menu.columns.id') }}</th>
                                         <th is='sortable' :column="'title'">{{ trans('admin.menu.columns.title') }}</th>
-                                        <th is='sortable' :column="'type'">{{ trans('admin.menu.columns.type') }}</th>
 
                                         <th></th>
                                     </tr>
@@ -75,9 +74,8 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                    <td>@{{ pagination.state.from + index }}</td>
                                         <td>@{{ item.title }}</td>
-                                        <td>@{{ item.type }}</td>
                                         
                                         <td>
                                             <div class="row no-gutters">

@@ -27,9 +27,7 @@ class UpdateMenu extends FormRequest
     {
         return [
             'title' => ['sometimes', 'string'],
-            'type' => ['sometimes', 'string'],
             'description' => ['sometimes', 'string'],
-            
         ];
     }
 

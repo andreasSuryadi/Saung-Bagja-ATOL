@@ -17,7 +17,6 @@ class CreateMenusTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->string('type');
             $table->longText('description');
 
             $table->timestamps();

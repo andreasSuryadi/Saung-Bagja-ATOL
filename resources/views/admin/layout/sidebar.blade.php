@@ -5,7 +5,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('admin') }}"><i class="nav-icon icon-home"></i> {{ __('Beranda') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('admin/about-us') }}"><i class="nav-icon icon-home"></i> {{ __('Tentang Kami') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/news-content') }}"><i class="nav-icon icon-puzzle"></i> {{ __('Berita') }}</a></li>
-           <li class="nav-item"><a class="nav-link" href="{{ url('admin/menus') }}"><i class="nav-icon icon-list"></i> {{ __('Hidangan') }}</a></li>
+           <li class="nav-item"><a class="nav-link" href="{{ url('admin/menu-content') }}"><i class="nav-icon icon-list"></i> {{ __('Hidangan') }}</a></li>
 
 
            <li class="nav-title">{{ __('Content') }}</li>

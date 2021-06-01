@@ -66,26 +66,6 @@ return [
         ],
     ],
 
-    'news' => [
-        'title' => 'News',
-
-        'actions' => [
-            'index' => 'News',
-            'create' => 'New News',
-            'edit' => 'Edit :name',
-            'will_be_published' => 'News will be published at',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'title' => 'Title',
-            'type' => 'Type',
-            'description' => 'Description',
-            'published_at' => 'Published at',
-            
-        ],
-    ],
-
     'menu' => [
         'title' => 'Menus',
 
@@ -96,7 +76,7 @@ return [
         ],
 
         'columns' => [
-            'id' => 'ID',
+            'id' => 'No',
             'title' => 'Title',
             'type' => 'Type',
             'description' => 'Description',
