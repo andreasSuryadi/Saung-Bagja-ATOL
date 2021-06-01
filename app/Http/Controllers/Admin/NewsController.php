@@ -38,10 +38,10 @@ class NewsController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'type', 'published_at'],
+            ['id', 'title', 'published_at'],
 
             // set columns to searchIn
-            ['id', 'title', 'type', 'description']
+            ['id', 'title', 'description']
         );
 
         if ($request->ajax()) {
@@ -66,7 +66,11 @@ class NewsController extends Controller
     {
         $this->authorize('admin.news.create');
 
-        return view('admin.news.create');
+        $news = new News();
+
+        return view('admin.news.create', [
+            'news' => $news
+        ]);
     }
 
     /**

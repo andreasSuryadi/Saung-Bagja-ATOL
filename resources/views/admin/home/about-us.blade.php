@@ -6,7 +6,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <i class="fa fa-align-justify"></i> About Us
+                <i class="fa fa-align-justify"></i> Tentang Kami
             </div>
 
             <div class="card-body">

@@ -13,17 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.menu.home');
-});
-Route::get('about-us', function () {
-    return view('pages.menu.about-us');
-});
+Route::get('/', 'App\Http\Controllers\ConnectionController@home');
+Route::get('about-us', 'App\Http\Controllers\ConnectionController@aboutUs');
+Route::get('news', 'App\Http\Controllers\ConnectionController@news');
 Route::get('menu', function () {
     return view('pages.menu.menu');
-});
-Route::get('news', function () {
-    return view('pages.menu.news');
 });
 
 /* Auto-generated admin routes */
@@ -40,7 +34,9 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
         Route::get('/',                                             'PageController@home')->name('home');
-        Route::get('{slug}/{section}',                              'PageController@indexSection')->name('indexSection');
+        Route::get('/about-us',                                     'PageController@aboutUs')->name('aboutUs');
+        Route::get('/news-content',                                 'PageController@news')->name('news');
+        Route::get('{slug}/{section}/show',                         'PageController@indexSection')->name('indexSection');
         Route::post('{slug}/{section}/save',                        'PageController@save')->name('save');
     });
 });
@@ -61,7 +57,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
@@ -73,6 +68,21 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
             Route::post('/bulk-destroy',                                'NewsController@bulkDestroy')->name('bulk-destroy');
             Route::post('/{news}',                                      'NewsController@update')->name('update');
             Route::delete('/{news}',                                    'NewsController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('menus')->name('menus/')->group(static function() {
+            Route::get('/',                                             'MenusController@index')->name('index');
+            Route::get('/create',                                       'MenusController@create')->name('create');
+            Route::post('/',                                            'MenusController@store')->name('store');
+            Route::get('/{menu}/edit',                                  'MenusController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'MenusController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{menu}',                                      'MenusController@update')->name('update');
+            Route::delete('/{menu}',                                    'MenusController@destroy')->name('destroy');
         });
     });
 });

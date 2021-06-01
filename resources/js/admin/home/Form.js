@@ -27,3 +27,14 @@ Vue.component('about-us-home-form', {
         }
     },
 });
+
+Vue.component('menu-home-form', {
+    mixins: [AppForm],
+    data: function() {
+        return {
+            form: {
+                title:  '' ,
+            },
+        }
+    },
+});

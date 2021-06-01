@@ -57,11 +57,49 @@ return [
         ],
 
         'columns' => [
+            'id' => 'No',
+            'title' => 'Title',
+            'type' => 'Type',
+            'description' => 'Description',
+            'published_at' => 'Published at',
+            
+        ],
+    ],
+
+    'news' => [
+        'title' => 'News',
+
+        'actions' => [
+            'index' => 'News',
+            'create' => 'New News',
+            'edit' => 'Edit :name',
+            'will_be_published' => 'News will be published at',
+        ],
+
+        'columns' => [
             'id' => 'ID',
             'title' => 'Title',
             'type' => 'Type',
             'description' => 'Description',
             'published_at' => 'Published at',
+            
+        ],
+    ],
+
+    'menu' => [
+        'title' => 'Menus',
+
+        'actions' => [
+            'index' => 'Menus',
+            'create' => 'New Menu',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'type' => 'Type',
+            'description' => 'Description',
             
         ],
     ],

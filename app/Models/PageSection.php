@@ -24,11 +24,10 @@ class PageSection extends Model implements HasMedia
         'page_id',
 
         'section',
-        'icon',
         'title',
         'subtitle',
         'description',
-        'button'
+        'button',
     ];
 
     /* ************************ MEDIA ************************ */

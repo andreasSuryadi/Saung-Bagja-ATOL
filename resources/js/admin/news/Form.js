@@ -9,9 +9,8 @@ Vue.component('news-form', {
                 type:  '' ,
                 description:  '' ,
                 published_at:  '' ,
-                
-            }
+            },
+            mediaCollections: ['banner'],
         }
     }
-
 });

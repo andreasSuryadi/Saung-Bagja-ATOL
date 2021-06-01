@@ -27,7 +27,6 @@ class StoreNews extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'type' => ['required', 'string'],
             'description' => ['required', 'string'],
             'published_at' => ['required', 'date'],
             

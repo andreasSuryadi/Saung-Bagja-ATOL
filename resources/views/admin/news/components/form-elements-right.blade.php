@@ -17,4 +17,18 @@
     </div>
 </div>
 
-
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-check"></i> Banner
+    </div>
+    <div class="card-block">
+        <div class="row form-group align-items-center">
+            <div class="col-md-12">
+                @include('brackets/admin-ui::admin.includes.media-uploader', [
+                'mediaCollection' => app(App\Models\News::class)->getMediaCollection('banner'),
+                'media' => $news->getThumbs200ForCollection('banner'),
+                ])
+            </div>
+        </div>
+    </div>
+</div>

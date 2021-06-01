@@ -17,7 +17,6 @@ class CreateNewsTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->string('type');
             $table->longText('description');
 
             $table->timestamp('published_at');

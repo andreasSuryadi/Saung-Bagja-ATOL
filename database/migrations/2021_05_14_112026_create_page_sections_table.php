@@ -23,7 +23,6 @@ class CreatePageSectionsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->longText('description')->nullable();
             $table->string('button')->nullable();
-            $table->json('details');
 
             $table->timestamps();
         });

@@ -15,6 +15,16 @@ class PageController extends Controller
         return view('admin.home.index');
     }
 
+    public function aboutUs()
+    {
+        return view('admin.about-us.index');
+    }
+
+    public function news()
+    {
+        return view('admin.news-content.index');
+    }
+
     public function indexSection($slug, $section)
     {
         $page = Page::where('title', $slug)->first();
@@ -29,14 +39,40 @@ class PageController extends Controller
             $pageSection = new PageSection();
         }
 
-        if ($section == 'banner') {
-            return view('admin.home.banner', [
-                'pageSection' => $pageSection
-            ]);
-        } else if ($section == 'about-us') {
-            return view('admin.home.about-us', [
-                'pageSection' => $pageSection
-            ]);
+        if ($slug == 'home') {
+            if ($section == 'banner') {
+                return view('admin.home.banner', [
+                    'pageSection' => $pageSection
+                ]);
+            } else if ($section == 'about-us') {
+                return view('admin.home.about-us', [
+                    'pageSection' => $pageSection
+                ]);
+            } else if ($section == 'menu') {
+                return view('admin.home.menu', [
+                    'pageSection' => $pageSection
+                ]);
+            }
+        } else if ($slug == 'about-us') {
+            if ($section == 'banner') {
+                return view('admin.about-us.banner', [
+                    'pageSection' => $pageSection
+                ]);
+            } else if ($section == 'section1') {
+                return view('admin.about-us.section1', [
+                    'pageSection' => $pageSection
+                ]);
+            } else if ($section == 'section2') {
+                return view('admin.about-us.section2', [
+                    'pageSection' => $pageSection
+                ]);
+            }
+        } else if ($slug == 'news') {
+            if ($section == 'banner') {
+                return view('admin.news-content.banner', [
+                    'pageSection' => $pageSection
+                ]);
+            }
         }
     }
 
@@ -63,7 +99,7 @@ class PageController extends Controller
             $pageSection->update($sanitized);
         }
 
-        // return redirect('/admin');
-        return response()->json("Successfuly save data", 200);
+        return redirect('admin');
+        // return response()->json("Successfuly save data", 200);
     }
 }

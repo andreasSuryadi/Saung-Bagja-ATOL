@@ -31,3 +31,16 @@ $factory->define(App\Models\News::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Menu::class, static function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'type' => $faker->sentence,
+        'description' => $faker->text(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'deleted_at' => null,
+        
+        
+    ];
+});

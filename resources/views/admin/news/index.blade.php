@@ -50,9 +50,8 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.news.columns.id') }}</th>
+                                        <th :column="'id'">{{ trans('admin.news.columns.id') }}</th>
                                         <th is='sortable' :column="'title'">{{ trans('admin.news.columns.title') }}</th>
-                                        <th is='sortable' :column="'type'">{{ trans('admin.news.columns.type') }}</th>
                                         <th is='sortable' class="text-center" :column="'published_at'">{{ trans('admin.news.columns.published_at') }}</th>
 
                                         <th></th>
@@ -77,9 +76,8 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                    <td>@{{ pagination.state.from + index }}</td>
                                         <td>@{{ item.title }}</td>
-                                        <td>@{{ item.type }}</td>
                                             <td class="text-center text-nowrap">
                                             <span v-if="item.published_at <= now">
                                                 @{{ item.published_at | datetime('DD.MM.YYYY, HH:mm') }}

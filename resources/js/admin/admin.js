@@ -11,11 +11,7 @@ import VueCookie from 'vue-cookie';
 import { Admin } from 'craftable';
 import VModal from 'vue-js-modal'
 import Vue from 'vue';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './app-components/bootstrap';
 import './index';
 
@@ -28,8 +24,6 @@ Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueQuillEditor);
 Vue.use(Notifications);
 Vue.use(VueCookie);
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 
 new Vue({
     mixins: [Admin],

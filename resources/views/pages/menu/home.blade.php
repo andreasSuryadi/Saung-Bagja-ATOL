@@ -2,14 +2,14 @@
 
 @section('content')
     <!-- For Header Content -->
-    <header class="header">
+    <header class="header" style="background-image: linear-gradient(to right bottom, rgba(180, 76, 69, 0.8), rgba(83, 28, 24, 0.8)), url(<?= (isset($banner['banner'])) ? $banner['banner'] : asset('images/content/food-banner.jpg') ?>);">
         <div class="header__text-box">
             <h1 class="heading-primary">
-                <span class="heading-primary--main">Saung Bagja</span>
-                <span class="heading-primary--sub">Tempat makanan terenak</span>
+                <span class="heading-primary--main">{{ $banner['title'] }}</span>
+                <span class="heading-primary--sub">{{ $banner['subtitle'] }}</span>
             </h1>
 
-            <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
+            <a href="#section-tours" class="btn btn--white btn--animated">{{ $banner['button'] }}</a>
         </div>
     </header>
     
@@ -19,45 +19,36 @@
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
-                    Exciting tours for adventurous people
+                    {{ $about_us['title'] }}
                 </h2>
             </div>
 
             <div class="row">
                 <div class="col-1-of-2">
-                    <h3>You're going to fall in love with nature</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
-                        ducimus quam nisi exercitationem omnis earum qui.
-                    </p>
+                    {!! $about_us['description'] !!}
 
-                    <h3>Live adventures like you never have before</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla deserunt voluptatum nam.
-                    </p>
-
-                    <a href="#" class="btn-text">Learn more &rarr;</a>
+                    <a href="#" class="btn-text">{{ $about_us['button'] }} &rarr;</a>
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
 
-                        <img srcset="{{ asset('images/content/food-large1.jpg') }} 300w, {{ asset('images/content/food-large1.jpg') }} 1000w"
+                        <img srcset="{{ $about_us['image1'] ?? asset('images/content/food-large1.jpg') }} 300w, {{ $about_us['image1'] ?? asset('images/content/food-large1.jpg') }} 1000w"
                                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                                 alt="Photo 1"
                                 class="composition__photo composition__photo--p1"
-                                src="{{ asset('images/content/food-large1.jpg') }}">
+                                src="{{ $about_us['image1'] ?? asset('images/content/food-large1.jpg') }}">
 
-                        <img srcset="{{ asset('images/content/food-large2.jpg') }} 300w, {{ asset('images/content/food-large2.jpg') }} 1000w"
+                        <img srcset="{{ $about_us['image2'] ?? asset('images/content/food-large2.jpg') }} 300w, {{ $about_us['image2'] ?? asset('images/content/food-large2.jpg') }} 1000w"
                                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                                 alt="Photo 2"
                                 class="composition__photo composition__photo--p2"
-                                src="{{ asset('images/content/food-large2.jpg') }}">
+                                src="{{ $about_us['image2'] ?? asset('images/content/food-large2.jpg') }}">
 
-                        <img srcset="{{ asset('images/content/food-large3.jpg') }} 300w, {{ asset('images/content/food-large3.jpg') }} 1000w"
+                        <img srcset="{{ $about_us['image3'] ?? asset('images/content/food-large3.jpg') }} 300w, {{ $about_us['image3'] ?? asset('images/content/food-large3.jpg') }} 1000w"
                                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                                 alt="Photo 3"
                                 class="composition__photo composition__photo--p3"
-                                src="{{ asset('images/content/food-large3.jpg') }}">
+                                src="{{ $about_us['image3'] ?? asset('images/content/food-large3.jpg') }}">
 
                         <!--
                         <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
@@ -69,56 +60,11 @@
             </div>
         </section>
 
-        <!-- For Section Features -->
-        <section class="section-features">
-            <div class="row">
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-world"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Explore the world</h3>
-                        <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-compass"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
-                        <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-map"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Find your way</h3>
-                            <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-heart"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Live a healthier life</h3>
-                        <p class="feature-box__text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- For Section Menus -->
+        <!-- For Section News -->
         <section class="section-tours" id="section-tours">
             <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
-                    Most popular tours
+                    {{ $menu['title'] }}
                 </h2>
             </div>
 
@@ -221,7 +167,7 @@
             </div>
 
             <div class="u-center-text u-margin-top-medium">
-                <a href="#" class="btn btn--green">Discover all tours</a>
+                <a href="#" class="btn btn--green">{{ $menu['button'] }}</a>
             </div>
         </section>
     </main>
